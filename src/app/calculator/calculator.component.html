@@ -1,0 +1,89 @@
+<div class="display">
+	<div class="form-control text-right">
+		<div class="inner">
+      <span *ngFor="let token of previousTokens" class="token">{{ token | format }}</span>
+		</div>
+	</div>
+	<div class="form-control form-control-lg text-right">
+		<div class="inner">
+      <span *ngIf="tokens.length === 0" class="token">0</span>
+      <span *ngFor="let token of tokens" class="token">{{ token | format }}</span>
+		</div>
+	</div>
+</div>
+
+<div class="mt-3 keypad">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col">
+			<button class="btn btn-tertiary btn-block" (click)="delete()">DEL</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-tertiary btn-block" (click)="clear()">C</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('7')">7</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('8')">8</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('9')">9</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="insertOperator('(')">(</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="insertOperator(')')">)</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('4')">4</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('5')">5</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('6')">6</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="insertOperator('-')">–</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="insertOperator('/')">:</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('1')">1</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('2')">2</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('3')">3</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="insertOperator('+')">+</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="insertOperator('*')">x</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-span-2">
+      <button class="btn btn-secondary btn-block" (click)="insertChar('0')">0</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="insertChar('.')">,</button>
+    </div>
+    <div class="col-span-2">
+      <button autofocus class="btn btn-primary btn-block" (click)="evaluate()">=</button>
+    </div>
+  </div>
+</div>
